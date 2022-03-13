@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "6231f572-afed-4225-8338-967f7032a488",
+		"name": "banking-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test test\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/customers?id=961bb700-27c1-4b99-a671-a1820199f049",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "961bb700-27c1-4b99-a671-a1820199f049"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\": \"bf5242a9-0fa6-469a-9ceb-e49f7d5a6465\",\n    \"accountType\": \"DEPOSIT\",\n    \"currency\": \"USD\",\n    \"balance\": \"300.30\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/accounts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transfer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromCustomerId\": \"7787b00a-64b5-479b-9584-0b6787f42480\",\n    \"fromAccountId\": \"293960cf-60a2-43d6-a5cb-d3ff05d2a59d\",\n    \"toCustomerId\": \"7787b00a-64b5-479b-9584-0b6787f42480\",\n    \"toAccountId\": \"293960cf-60a2-43d6-a5cb-d3ff05d2a59d\",\n    \"amount\": \"1\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transfers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transfers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/balances?customerId=bf5242a9-0fa6-469a-9ceb-e49f7d5a6465&accountId=5e874cc4-2d44-4068-81ff-4f6d63022d08",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"balances"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "bf5242a9-0fa6-469a-9ceb-e49f7d5a6465"
+						},
+						{
+							"key": "accountId",
+							"value": "5e874cc4-2d44-4068-81ff-4f6d63022d08"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/balances?customerId=bf5242a9-0fa6-469a-9ceb-e49f7d5a6465&accountId=5e874cc4-2d44-4068-81ff-4f6d63022d08",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"balances"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "bf5242a9-0fa6-469a-9ceb-e49f7d5a6465"
+						},
+						{
+							"key": "accountId",
+							"value": "5e874cc4-2d44-4068-81ff-4f6d63022d08"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
